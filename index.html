@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="description" content="QG oficial da Família Lapidado [LPD]. Precisão, Força e Código. Base operacional ativa 24/7.">
+  <meta name="author" content="Família Lapidado">
+
+  <!-- Como o link aparece no WhatsApp / Discord / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[LPD] Família Lapidado — QG Oficial">
+  <meta property="og:description" content="Estrutura própria, código limpo e lealdade à base.">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>[LPD] Família Lapidado — QG Oficial</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+
+  <style>
+    :root {
+      --bg:          #0b0f19;
+      --painel:      #111827;
+      --painel-2:    #1a2333;
+      --neon:        #00ffcc;
+      --neon-fraco:  rgba(0, 255, 204, 0.12);
+      --borda:       rgba(0, 255, 204, 0.35);
+      --texto:       #e5e7eb;
+      --texto-fraco: #9ca3af;
+      --raio:        14px;
+      --largura:     720px;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100dvh;
+      padding: clamp(12px, 4vw, 32px);
+      display: flex;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 50% -20%, rgba(0, 255, 204, 0.10), transparent 55%),
+        var(--bg);
+      color: var(--texto);
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--largura);
+      padding: clamp(20px, 5vw, 36px);
+      background: linear-gradient(180deg, #131c2e 0%, var(--painel) 100%);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      box-shadow:
+        0 0 40px rgba(0, 255, 204, 0.12),
+        inset 0 0 60px rgba(0, 255, 204, 0.03);
+      animation: subir 0.6s ease-out both;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 6vw, 2.4rem);
+      color: #ffffff;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      text-shadow: 0 0 18px rgba(0, 255, 204, 0.55);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 16px;
+      border: 1px solid var(--borda);
+      border-radius: 999px;
+      background: var(--neon-fraco);
+      color: var(--neon);
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .manifesto {
+      padding: 16px 18px;
+      background: var(--painel-2);
+      border-left: 3px solid var(--neon);
+      border-radius: 0 var(--raio) var(--raio) 0;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .manifesto strong { color: var(--neon); }
+
+    .section-title {
+      margin: 28px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--borda);
+      color: #ffffff;
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .lista {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--texto-fraco);
+      font-size: 0.92rem;
+      text-align: left;
+    }
+
+    .lista li::before {
+      content: "⚡";
+      margin-right: 8px;
+      color: var(--neon);
+    }
+
+    .lista strong { color: var(--texto); }
+
+    .aviso {
+      color: var(--texto-fraco);
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .acoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      padding: 13px 24px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background: var(--neon);
+      color: var(--bg);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 0 14px rgba(0, 255, 204, 0.35);
+      transition: background 0.25s ease, color 0.25s ease,
+                  box-shadow 0.25s ease, transform 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #ffffff;
+      box-shadow: 0 0 22px rgba(255, 255, 255, 0.55);
+      transform: translateY(-2px);
+    }
+
+    .btn:active { transform: translateY(0); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--neon);
+      border-color: var(--borda);
+      box-shadow: none;
+    }
+
+    .btn-ghost:hover {
+      background: var(--neon-fraco);
+      color: #ffffff;
+      box-shadow: 0 0 18px var(--neon-fraco);
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.75rem;
+      color: #4b5563;
+    }
+
+    .assinatura {
+      margin-top: 4px;
+      color: var(--borda);
+      letter-spacing: 1px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-left: 6px;
+      border-radius: 50%;
+      background: var(--neon);
+      box-shadow: 0 0 8px var(--neon);
+      vertical-align: middle;
+      animation: pulsar 1.6s ease-in-out infinite;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--neon);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 10;
+      padding: 10px 16px;
+      background: var(--neon);
+      color: var(--bg);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 0 0 8px 0;
+    }
+    .skip-link:focus { left: 0; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      margin: -1px; padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @keyframes subir {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @keyframes pulsar {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.25; }
+    }
+
+    @media (max-width: 420px) {
+      .acoes { flex-direction: column; }
+      .btn   { width: 100%; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="container">
+
+    <header class="hero">
+      <h1>FAMÍLIA LAPIDADO</h1>
+      <p class="tag">[LPD] — Precisão, Força e Código</p>
+    </header>
+
+    <main id="conteudo">
+
+      <section class="manifesto" aria-labelledby="titulo-manifesto">
+        <h2 id="titulo-manifesto" class="sr-only">Manifesto</h2>
+        <p>
+          <strong>Manifesto:</strong> O diamante bruto passa pelo fogo e pelo atrito antes de brilhar.
+          Nós somos os Lapidados. Não viemos do acaso, viemos da persistência. Estrutura própria,
+          código limpo e lealdade cega à base. Quem cai para o sistema, levanta pela nossa própria rede.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-diretoria">
+        <h2 id="titulo-diretoria" class="section-title">Diretoria &amp; Fundadores</h2>
+        <ul class="lista">
+          <li><strong>Fundador Principal:</strong> [LPD] Liderança</li>
+          <li><strong>Base Operacional:</strong> Ativa 24/7 <span class="dot" aria-hidden="true"></span></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-canais">
+        <h2 id="titulo-canais" class="section-title">Canais Oficiais</h2>
+        <p class="aviso">Acesse nossa base de comunicação blindada.</p>
+
+        <div class="acoes">
+          <a class="btn" href="https://chat.whatsapp.com/GwpvX68IfEPCSkjEQJtDhD" target="_blank" rel="noopener noreferrer">ACESSAR QG / CANAL</a>
+          <button class="btn btn-ghost" type="button" id="btn-copiar">COPIAR LINK</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; <span id="ano">2026</span> Família Lapidado. Todos os direitos reservados.</p>
+      <p class="assinatura">// lapidados não desistem</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    const btnCopiar = document.getElementById('btn-copiar');
+    const textoOriginal = btnCopiar.textContent;
+    const linkGrupo = 'https://chat.whatsapp.com/GwpvX68IfEPCSkjEQJtDhD';
+
+    btnCopiar.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(linkGrupo);
+        btnCopiar.textContent = 'LINK COPIADO ✔';
+      } catch (erro) {
+        btnCopiar.textContent = 'COPIE MANUALMENTE';
+      }
+      setTimeout(() => { btnCopiar.textContent = textoOriginal; }, 2000);
+    });
+  </script>
+</body>
+</html>
