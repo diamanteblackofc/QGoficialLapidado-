@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0f19">
-  <meta name="description" content="QG oficial da Família Lapidado [LPD]. Precisão, Força e Código. Base operacional ativa 24/7.">
+  <meta name="description" content="QG oficial da Família Lapidado 💎 [LPD]. Do fogo à forja, do bruto ao brilho. Base operacional ativa 24/7.">
   <meta name="author" content="Família Lapidado">
 
-  <!-- Como o link aparece no WhatsApp / Discord / Telegram -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="[LPD] Família Lapidado — QG Oficial">
-  <meta property="og:description" content="Estrutura própria, código limpo e lealdade à base.">
+  <meta property="og:title" content="💎 [LPD] Família Lapidado — QG Oficial">
+  <meta property="og:description" content="Não nascemos prontos, nós nos moldamos. Estrutura própria, código limpo e lealdade à base.">
   <meta property="og:locale" content="pt_BR">
 
-  <title>[LPD] Família Lapidado — QG Oficial</title>
+  <title>💎 [LPD] Família Lapidado — QG Oficial</title>
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
 
@@ -28,7 +27,7 @@
       --texto:       #e5e7eb;
       --texto-fraco: #9ca3af;
       --raio:        14px;
-      --largura:     720px;
+      --largura:     760px;
     }
 
     *, *::before, *::after {
@@ -69,12 +68,20 @@
       margin-bottom: 24px;
     }
 
+    .diamante {
+      font-size: clamp(2.2rem, 9vw, 3.2rem);
+      filter: drop-shadow(0 0 16px rgba(0, 255, 204, 0.65));
+      animation: flutuar 3.2s ease-in-out infinite;
+      display: inline-block;
+    }
+
     h1 {
       font-size: clamp(1.6rem, 6vw, 2.4rem);
       color: #ffffff;
       letter-spacing: 2px;
       line-height: 1.2;
       text-shadow: 0 0 18px rgba(0, 255, 204, 0.55);
+      margin-top: 8px;
     }
 
     .tag {
@@ -88,6 +95,13 @@
       font-size: 0.85rem;
       font-weight: bold;
       letter-spacing: 1px;
+    }
+
+    .lema {
+      margin-top: 14px;
+      color: var(--texto-fraco);
+      font-size: 0.85rem;
+      font-style: italic;
     }
 
     .manifesto {
@@ -111,6 +125,14 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "✠";
+      color: var(--neon);
     }
 
     .lista {
@@ -129,6 +151,63 @@
     }
 
     .lista strong { color: var(--texto); }
+
+    .lista-numerada {
+      list-style: none;
+      counter-reset: item;
+      display: grid;
+      gap: 10px;
+      color: var(--texto-fraco);
+      font-size: 0.92rem;
+      text-align: left;
+    }
+
+    .lista-numerada li {
+      counter-increment: item;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .lista-numerada li::before {
+      content: counter(item);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--neon-fraco);
+      border: 1px solid var(--borda);
+      border-radius: 4px;
+      color: var(--neon);
+      font-size: 0.72rem;
+      font-weight: bold;
+    }
+
+    .lista-numerada strong { color: var(--texto); }
+
+    .simbolo-box {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      background: var(--painel-2);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      text-align: left;
+    }
+
+    .simbolo-box .icone {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .simbolo-box p {
+      color: var(--texto-fraco);
+      font-size: 0.9rem;
+    }
 
     .aviso {
       color: var(--texto-fraco);
@@ -181,12 +260,34 @@
       box-shadow: 0 0 18px var(--neon-fraco);
     }
 
+    .lema-final {
+      margin-top: 28px;
+      padding: 18px;
+      text-align: center;
+      border-top: 1px dashed var(--borda);
+      border-bottom: 1px dashed var(--borda);
+    }
+
+    .lema-final p:first-child {
+      color: var(--neon);
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .lema-final p:last-child {
+      color: var(--texto-fraco);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
     footer {
-      margin-top: 32px;
+      margin-top: 24px;
       padding-top: 16px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       font-size: 0.75rem;
       color: #4b5563;
+      text-align: center;
     }
 
     .assinatura {
@@ -247,9 +348,15 @@
       50%      { opacity: 0.25; }
     }
 
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-6px) rotate(-4deg); }
+    }
+
     @media (max-width: 420px) {
       .acoes { flex-direction: column; }
       .btn   { width: 100%; text-align: center; }
+      .simbolo-box { flex-direction: column; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -264,8 +371,10 @@
   <div class="container">
 
     <header class="hero">
+      <span class="diamante" aria-hidden="true">💎</span>
       <h1>FAMÍLIA LAPIDADO</h1>
       <p class="tag">[LPD] — Precisão, Força e Código</p>
+      <p class="lema">Do fogo à forja, do bruto ao brilho.</p>
     </header>
 
     <main id="conteudo">
@@ -273,19 +382,59 @@
       <section class="manifesto" aria-labelledby="titulo-manifesto">
         <h2 id="titulo-manifesto" class="sr-only">Manifesto</h2>
         <p>
-          <strong>Manifesto:</strong> O diamante bruto passa pelo fogo e pelo atrito antes de brilhar.
-          Nós somos os Lapidados. Não viemos do acaso, viemos da persistência. Estrutura própria,
-          código limpo e lealdade cega à base. Quem cai para o sistema, levanta pela nossa própria rede.
+          <strong>Manifesto:</strong> Não nascemos prontos, nós nos moldamos. Somos a resistência e a
+          precisão do código. O diamante bruto passa pelo fogo e pelo atrito antes de brilhar. Estrutura
+          própria, código limpo e lealdade cega à base. Quem cai para o sistema, levanta pela nossa
+          própria rede.
         </p>
       </section>
 
-      <section aria-labelledby="titulo-diretoria">
-        <h2 id="titulo-diretoria" class="section-title">Diretoria &amp; Fundadores</h2>
+      <section aria-labelledby="titulo-estrutura">
+        <h2 id="titulo-estrutura" class="section-title">A Estrutura</h2>
         <ul class="lista">
-          <li><strong>Fundador Principal:</strong> [LPD] Liderança</li>
-          <li><strong>Base Operacional:</strong> Ativa 24/7 <span class="dot" aria-hidden="true"></span></li>
+          <li><strong>Sigla:</strong> [LPD]</li>
+          <li><strong>Nome:</strong> LAPIDADO</li>
+          <li><strong>Símbolo Oficial:</strong> 💎</li>
+          <li><strong>Fundador:</strong> @DiamanteBlackOfc</li>
         </ul>
       </section>
+
+      <section aria-labelledby="titulo-simbolo">
+        <h2 id="titulo-simbolo" class="section-title">O Significado do Símbolo</h2>
+        <div class="simbolo-box">
+          <span class="icone" aria-hidden="true">💎</span>
+          <p>
+            O diamante representa a essência da nossa base. Antes de brilhar, ele é bruto, resiste a
+            pressões extremas e passa pelo atrito constante. Cada corte e lapidação simboliza nossa
+            evolução, nossa força indestrutível e a precisão das nossas ferramentas. Quem carrega o
+            💎 brilha sob pressão e corta qualquer obstáculo.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="titulo-objetivo">
+        <h2 id="titulo-objetivo" class="section-title">Objetivo da Família</h2>
+        <ol class="lista-numerada">
+          <li>Evolução técnica e desenvolvimento de ferramentas próprias.</li>
+          <li>Supremacia operacional e blindagem da base.</li>
+          <li>Lealdade cega aos membros [LPD].</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="titulo-regras">
+        <h2 id="titulo-regras" class="section-title">Regras &amp; Deveres</h2>
+        <ol class="lista-numerada">
+          <li><strong>Respeito aos membros:</strong> a união da base está acima de tudo.</li>
+          <li><strong>Discrição:</strong> mantenha a linha e não exponha a estrutura.</li>
+          <li><strong>Atividade:</strong> quem carrega o [LPD] deve ser útil. Ego baixo, moral alta.</li>
+          <li><strong>Código é poder:</strong> use suas habilidades para construir, não apenas para brincar.</li>
+        </ol>
+      </section>
+
+      <div class="lema-final">
+        <p>"O atrito nos lapida."</p>
+        <p>💀 QUEM MEXE COM UM, MEXE COM A BASE. 💀</p>
+      </div>
 
       <section aria-labelledby="titulo-canais">
         <h2 id="titulo-canais" class="section-title">Canais Oficiais</h2>
